@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@800&family=Shadows+Into+Light&display=swap');
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
+
+    /* COLORS */
+    --var--green:#10b98194;
+    --var--black-bg:rgba(0, 0, 0, 0.644);
+    --var--white:#fff;
+    --var--pure-black:#000;
+    --var--white-bg:rgba(255, 255, 255, 0.459);
+}
+
+/* GLOBAL STYLING =====================================================================================*/
+body{
+    background-image: url(img/lofi2.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height:100vh;
+    width:100vw;
+    overflow-y: hidden;
+}
+h1,h2,h3,h4,h4,h5,p,a,span{
+    color:var(--var--white);
+}
+
+/* HOVERS */
+.zoom i:hover, .new-note .todo-buttons i:hover, .music-container i:hover{
+    color:var(--var--green);
+    cursor:pointer;
+    transition: .2s;
+    scale:1.2;
+}
+
+/* PRELOADER =======================================================================================*/
+.loading{
+    background-color: var(--var--pure-black);
+    position: fixed;
+    top:0;
+    left:0;
+    display:grid;
+    place-items: center;
+    width:100vw;
+    height:100vh;
+    z-index:999;
+    overflow: hidden;
+}
+.loading img{
+    animation: zoom-in 1.5s linear;
+}
+@keyframes zoom-in{
+    from{
+        scale:0.2;
+        transform:rotate(360deg);
+    }
+    to{
+        scale:1; 
+    }
+}
+
+/* NAVIGATION BAR ===============================================================================*/
+header{
+    padding:1rem;
+}
+header nav{
+    display:flex;
+    justify-content: space-between;
+}
+nav .logo{
+    width:5rem;
+    height:5rem;
+}
+
+/* LOFI CLOCK */
+.time-container{
+    padding:1rem;
+    background-color: var(--var--white-bg);
+    border-radius: .5rem;
+}
+
+.time-container span{
+    font-size:clamp(1.9rem, 4vw, 4rem);
+    text-shadow:  2px 7px 10px black;
+    font-family: 'Gemunu Libre', sans-serif;
+    font-weight:800;
+    color:var(--var--white);
+}
+
+/* ZOOM IN */
+.zoom{
+    height:2rem;
+}
+.zoom i{
+    font-size: 2rem;
+    color:var(--var--white);
+    position:relative;
+}
+.tooltip{
+    color:var(--var--white);
+    font-size: .9rem;
+    font-family: 'Shadows Into Light', cursive;
+    border-radius: .5rem;
+    padding:.5rem;
+    background-color: var(--var--black-bg);
+    position:absolute;
+    right:4.3rem;
+    top:1rem;
+    display:none;
+}
+
+.zoom:hover .tooltip{
+    display:block;
+    transition: .3s;
+}
+
+
+/* WRAPPER ============================================================================================= */
+.center{
+    max-width: 1600px;
+    margin:0 auto;
+}
+.wrapper{
+    height:72vh;
+    width:100%;
+    padding:0 2rem;
+}
+.container-wrappers{
+    background-color: var(--var--black-bg);
+    width:40%;
+    padding:1rem;
+    border-radius: .5rem;
+    height:100%;
+}
+.container{
+    height:100%;
+}
+
+/* TODO LIST ============================================================================================= */
+.todo{
+    width:100%;
+    height:60%;
+    padding-bottom: 3.7rem;
+}
+.todo .todo-header{
+    display:flex;
+    justify-content: space-between;
+    gap:1rem;
+    align-items: center;
+}
+.todo .todo-header input{
+    width:100%;
+    padding:.5rem;
+    outline: none;
+    font-weight: bolder;
+    font-size: clamp(1rem, 1.3vw, 1.3rem);
+    border-radius: .5rem;
+    border:none;
+    font-family: 'Shadows Into Light', cursive;
+}
+.todo .todo-container{
+    width:100%;
+    height:100%;
+    margin-top: 1rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: .5rem;
+    padding:0 1rem;
+}
+.todo .todo-container::-webkit-scrollbar{
+    background-color: transparent;
+    width:.5rem;
+}
+.todo .todo-container::-webkit-scrollbar-thumb{
+    background-color: rgba(255, 255, 255, 0.637);
+    border-radius: .5rem;
+}
+.todo .todo-container .new-note{
+    color:var(--var--white);
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.582);
+    padding: .5rem 1rem;
+    border-bottom: .5px solid rgba(255, 255, 255, 0.37);
+}
+.todo .todo-container .new-note .todo-text{
+    font-size: clamp(1rem, 1.3vw, 1.3rem);
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.todo .todo-container .new-note .todo-buttons{
+    display:flex;
+    align-items: center;
+    gap:1.5rem;
+}
+.todo .todo-container .new-note .todo-buttons i{
+   cursor: pointer;
+}
+
+.toast{
+    background-color: #10b981e5;
+    width:30%;
+    padding:1rem;
+    text-align: center;
+    position: absolute;
+    bottom:-5rem;
+    left:50%;
+    transform: translate(-50%);
+    border-radius: .5rem;
+    transition:.3s;
+    visibility: hidden;
+    z-index: 3;
+}
+.toast h4{
+    color:var(--var--pure-black);
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.toast.active{
+    bottom:1rem;
+    visibility: visible;
+}
+
+/* MUSIC CONTAINER ===================================================================================== */
+.music-container{
+    height:40%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
+    padding:.5rem 1rem 1rem 1rem;
+    border-radius: 0 0 .5rem .5rem;
+}
+.music-title h2{
+    font-family: 'Shadows Into Light', cursive;
+}
+.music-container .waves{
+    width:100%;
+    height:3rem;
+}
+.music-container .waves img{
+    width:100%;
+    object-fit: cover;
+}
+.music-container .slider{
+    width:100%;
+    display:flex;
+    padding-top:1rem;
+}
+.music-container .slider > *{
+    flex:1;
+}
+.music-container .music-slider{
+    flex:5;
+}
+
+.music-container .total-duration{
+    text-align: right;
+}
+.music-container .controls{
+    display:flex;
+    justify-content: space-around;
+    padding-top:1rem;
+}
+.music-container .main-controls{
+    display:flex;
+    gap:3rem;
+}
+.music-container .controls span{
+    color:var(--var--white);
+}
+.music-container .main-controls i{
+    cursor:pointer;
+    font-size:1.3rem;
+}
+
+.music-container .button2.active{
+    animation: spin 5s linear infinite;
+}
+@keyframes spin{
+    from{
+        transform:rotate(0);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+
+/* FOOTER ============================================================================================= */
+footer{
+    position: absolute;
+    right:2rem;
+    bottom:2.5rem;
+}
+footer p{
+    font-family: 'Shadows Into Light', cursive;
+}
+
+
+@media(max-width:900px){
+    .wrapper{
+        padding:0 1.2rem;
+    }
+    .zoom{
+        display:none;
+    }
+    .container-wrappers{
+        width:100%;
+    }
+    .toast{
+        width:90%;
+    }
+    footer{
+        right:1rem;
+        bottom:1rem;
+    }
+}
+
+@media(min-width:1600px){
+    .container-wrappers{
+        width:70%;
+        margin:0 auto;
+    }
+    .todo-container{
+        height: 19rem;
+    }
+}
+
+/* 
+@media(max-width:1160px){
+    .wrapper{
+        display: grid;
+        place-items: center;
+    }
+    .container{
+        width:100%;
+    }
+    .container-wrappers{
+        width:80%;
+    }
+    footer{
+        right:1rem;
+        bottom:1rem;
+    }
+    .logo-container{
+        padding: 1rem 1rem;
+    }
+    .time-container{
+        padding:1rem;
+    }
+    .zoom{
+        display:none;
+    }
+
+}
+@media(max-width:600px){
+    .container-wrappers{
+        width:100%;
+        margin-top: -3rem;
+    }
+}
+@media(min-width:1600px){
+    .container{
+        width:40%;
+        height:40rem;
+    }
+    .container-wrappers{
+        width:100%;
+    }
+    .todo-container{
+        height: 19rem;
+    }
+}
+@media(min-width:2500px){
+    .container{
+        width:50%;
+        height:80rem;
+    }
+    .todo-container{
+        height: 43rem;
+    }
+    .music-container{
+        width:100%;
+        height:40%;
+        padding:5rem;
+        border-radius: 0 0 .5rem .5rem;
+    }
+} */

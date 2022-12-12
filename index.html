@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lofi | Notes & Music in One.</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <!-- Link for customize stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link for Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="loading">
+        <img src="img/lofilogo.gif" alt="">
+    </div>
+    <div class="center">
+        <header>
+            <nav>
+                <a href="/"><img src="img/logo2.gif" alt="" class="logo"></a>
+    
+                <div class="time-container">
+                    <span id="hours">00</span>
+                    <span>:</span>
+                    <span id="minutes">00</span>
+                    <span>:</span>
+                    <span id="seconds">00</span>
+                    <span id="sessions">AM</span>
+                </div>
+    
+                <div class="zoom">
+                    <i class="fa-solid fa-expand" id="fullscreen"></i>
+                    <p class="tooltip">ZOOM IN</p>
+                </div>
+            </nav>
+        </header>
+    
+        <div class="wrapper">
+            <div class="container-wrappers">
+                <div class="container">
+    
+                    <div class="todo">
+                        <div class="todo-header">
+                            <h2>NOTEPAD</h2>
+                            <input type="text" id="post-note" placeholder="add note here">
+                        </div>
+    
+                        <div class="todo-container">
+    
+                        </div>
+    
+                        <div class="toast">
+                            <h4>You entered none, Try again</h4>
+                        </div>
+                    </div>
+    
+                    <div class="music-container">
+                        <div class="waves">
+    
+                        </div>
+                        <div class="music-title">
+                            <h2>Sour Grapes</h2>
+                            <h5>Lesserafim</h5>
+                        </div>
+                        <div class="slider">
+                            <span class="current-time">00:00</span>
+                            <input type="range" min="1" max="100" value="0" class="music-slider">
+                            <span class="total-duration">00:00</span>
+                        </div>
+                        <div class="controls">
+                            <span><i class="fa-solid fa-shuffle" title="shuffle"></i></span>
+                            <div class="main-controls">
+                                <span class="button1"><i class="fa-solid fa-backward"></i></span>
+                                <span class="button2"><i class="fa-solid fa-play"></i></span>
+                                <span class="button3"><i class="fa-solid fa-forward"></i></span>
+                            </div>
+                            <span><i class="fa-solid fa-repeat" title="repeat"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <footer>
+            <P>Coded By: Robin Dela Cruz</P>
+        </footer>
+    
+    </div>
+</body>
+    <!-- Link for Javascript -->
+    <script src="main.js"></script>
+</html>
