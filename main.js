@@ -80,7 +80,7 @@ function fullScreen(){
     fullscreen.innerHTML = `
             <i class="fa-solid fa-compress" id="exit-full"></i>
             <p class="tooltip">ZOOM OUT</p>
-    ` 
+    `
 
 }
 function exitFullScreen(){
@@ -89,11 +89,11 @@ function exitFullScreen(){
     fullscreen.innerHTML = `
     <i class="fa-solid fa-expand" id="fullscreen"></i>
     <p class="tooltip">ZOOM IN</p>
-`  
+`
 
 }
 
-            
+
 // ================================================== FOR MUSIC ========================================================
 let buttonPlay = document.querySelector(".button2")
 let music = document.createElement('audio')
@@ -149,10 +149,10 @@ function addTodo(){
     let newNote = document.createElement('div');
         newNote.classList.add('new-note')
         newNote.innerHTML = `<div class="todo-text">
-                    ${postNote.value}</div> 
+                    ${postNote.value}</div>
                     <div class="todo-buttons">
-                        <i class="fa-solid fa-check btn-check">✔</i>
-                        <i class="fa-solid fa-trash-can">🚮</i>
+                        <i class="fa-solid fa-check btn-check"></i>
+                        <i class="fa-solid fa-trash-can"></i>
                     </div>`
         const btnCheck = newNote.querySelectorAll('.btn-check')
 
