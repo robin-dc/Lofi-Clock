@@ -1,4 +1,4 @@
-# LOFI CLOCK | MUSIC AND NOTEPAD IN ONE
+# LoFi Clock | Music and Notepad in one.
 
 Responsive web application with local storage. I made this project for people who love taking notes and listening to music at the same time <br>
 
