@@ -10,7 +10,6 @@ Responsive website with local storage. I made this project for people who love t
 
 <a href="robin-dc.github.io/Lofi-Clock/" target="_blank"><img src='https://github.com/robin-dc/Lofi-Clock/blob/master/LOFI.png'></a>
 
-
 <br>
 
 ## 🚀 To clone this project using CLI:
