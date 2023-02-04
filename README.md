@@ -1,6 +1,6 @@
 # LoFi Clock | Music and Notepad in one.
 
-Responsive website with local storage. I made this project for people who love tracking time and making to do list while listening to music at the same time.<br>
+Responsive website with local storage. I made this project for people who love tracking time and making to do list while listening to music at the same time. <br>
 
 <br>
 
