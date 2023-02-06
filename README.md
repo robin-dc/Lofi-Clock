@@ -43,4 +43,3 @@ code index.html
 - Loopstudios https://robin-dc.github.io/Loopstudios/ <br>
 - Huddle https://robin-dc.github.io/Huddle-Landing-Page/ <br>
 - Fylo https://robin-dc.github.io/Fylo-Landing-Page/ <br>
-
