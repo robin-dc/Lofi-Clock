@@ -293,6 +293,7 @@ nav .logo{
     }
 }
 
+<<<<<<< HEAD
 .todo-text.active{
     text-decoration: line-through;
 }
@@ -300,6 +301,8 @@ nav .logo{
     display:none;
     background-color: red;
 }
+=======
+>>>>>>> aca85608d8b40880b0374fb9d7becada038a9d53
 /* FOOTER ============================================================================================= */
 footer{
     position: absolute;
@@ -339,6 +342,7 @@ footer p{
         height: 19rem;
     }
 }
+<<<<<<< HEAD
 
 /*
 @media(max-width:1160px){
@@ -400,3 +404,5 @@ footer p{
         border-radius: 0 0 .5rem .5rem;
     }
 } */
+=======
+>>>>>>> aca85608d8b40880b0374fb9d7becada038a9d53
