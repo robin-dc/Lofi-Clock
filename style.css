@@ -293,13 +293,11 @@ nav .logo{
     }
 }
 
-
 .todo-text.active{
     text-decoration: line-through;
 }
 .todo .todo-container .new-note.active{
     display:none;
-    background-color: red;
 }
 
 /* FOOTER ============================================================================================= */
