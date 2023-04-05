@@ -57,7 +57,7 @@ h1,h2,h3,h4,h4,h5,p,a,span{
         transform:rotate(360deg);
     }
     to{
-        scale:1; 
+        scale:1;
     }
 }
 
@@ -293,7 +293,13 @@ nav .logo{
     }
 }
 
-
+.todo-text.active{
+    text-decoration: line-through;
+}
+.todo .todo-container .new-note.active{
+    display:none;
+    background-color: red;
+}
 /* FOOTER ============================================================================================= */
 footer{
     position: absolute;
@@ -334,7 +340,7 @@ footer p{
     }
 }
 
-/* 
+/*
 @media(max-width:1160px){
     .wrapper{
         display: grid;

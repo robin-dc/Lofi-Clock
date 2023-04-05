@@ -140,29 +140,23 @@ postNote.addEventListener('keypress', function(e){
     }
 })
 
-btnAdd.addEventListener('click', function(){
-    addTodo()
-})
+// btnAdd.addEventListener('click', function(){
+//     addTodo()
+// })
 
+let storage = []
+let local = []
 
+let localStorageList = JSON.parse(localStorage.getItem("List"))
+
+if(localStorageList){
+    local = localStorageList
+    storage = local
+    addItem()
+
+}
 function addTodo(){
-    let newNote = document.createElement('div');
-        newNote.classList.add('new-note')
-        newNote.innerHTML = `<div class="todo-text">
-                    ${postNote.value}</div>
-                    <div class="todo-buttons">
-                        <i class="fa-solid fa-check btn-check"></i>
-                        <i class="fa-solid fa-trash-can"></i>
-                    </div>`
-        const btnCheck = newNote.querySelectorAll('.btn-check')
 
-        btnCheck.forEach(function(check){
-            check.addEventListener('click', function(e){
-                let eText = e.currentTarget.parentElement.previousElementSibling
-                eText.style.textDecorationLine = 'line-through'
-
-            })
-        })
         if(postNote.value === ""){
             const toast = document.querySelector('.toast')
             toast.classList.add('active')
@@ -171,7 +165,54 @@ function addTodo(){
             }, 2000)
         }
         else{
-            todoContainer.appendChild(newNote)
+            storage = []
+            storage.push(postNote.value)
+            local.push(postNote.value)
+            addItem()
             postNote.value = ""
+            localStorage.setItem("List", JSON.stringify(local))
         }
+}
+
+function addItem(){
+    for(let i = 0; i < storage.length; i++){
+        newNote = document.createElement('div');
+        newNote.classList.add('new-note')
+        newNote.innerHTML = `<div class="todo-text">
+        ${storage[i]}</div>
+        <div class="todo-buttons">
+            <i class="fa-solid fa-check btn-check"></i>
+            <i class="fa-solid fa-trash-can btn-del"></i>
+        </div>`
+        todoContainer.appendChild(newNote)
+    }
+    const btnCheck = document.querySelectorAll('.btn-check')
+
+    btnCheck.forEach(function(check){
+        check.addEventListener('click', function(e){
+            let eText = e.currentTarget.parentElement.previousElementSibling
+            eText.classList.toggle("active")
+
+        })
+    })
+
+    const btnDelete = document.querySelectorAll('.btn-del')
+    btnDelete.forEach(function(check){
+        check.addEventListener('click', function(e){
+            let noteText = e.currentTarget.parentElement.previousElementSibling.innerText
+            let eText = e.currentTarget.parentElement.parentElement
+            eText.classList.add("active")
+            console.log("localstorage: "+ localStorageList)
+            console.log("html: "+ noteText)
+            for(let i = 0; i < local.length; i++){
+                if(noteText.toLowerCase() == local[i]){
+                    console.log("localitem: "+ local[i])
+                    console.log("local: "+ local)
+                    local.splice(i,1)
+                    localStorage.clear()
+                    localStorage.setItem("List", JSON.stringify(local))
+                }
+            }
+        })
+    })
 }
