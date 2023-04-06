@@ -41,8 +41,9 @@ h1,h2,h3,h4,h4,h5,p,a,span{
     position: fixed;
     top:0;
     left:0;
-    display:grid;
-    place-items: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     width:100vw;
     height:100vh;
     z-index:999;
